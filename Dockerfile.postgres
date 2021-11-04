@@ -4,7 +4,7 @@ RUN chown -R postgres:postgres /var/lib/postgresql
 RUN chown -R postgres:postgres /var/lib/postgresql/data
 RUN chmod 777 /var/lib/postgresql
 RUN chmod 777 /var/lib/postgresql/data
-# USER postgres
+USER postgres
 
 EXPOSE 5432
 CMD ["postgres"]
