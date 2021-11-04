@@ -1,8 +1,25 @@
 FROM postgres:12.6
 
-RUN chown -R postgres:postgres /var/lib/postgresql/data
-RUN chmod 777 /var/lib/postgresql/data
-USER postgres
+# RUN chown -R postgres:postgres /var/lib/postgresql/data
+# RUN chmod 777 /var/lib/postgresql/data
+# USER postgres
+
+RUN mkdir temp
+
+# Create group and user
+
+RUN groupadd non-root-postgres-group
+RUN useradd non-root-postgres-user --group non-root-postgres-group
+
+# Set user rights to allow the on-root-postgres-user 
+# to access the temp folder
+
+RUN chown -R non-root-postgres-user:non-root-postgres-group /temp
+RUN chmod 777 /temp
+
+# Change to non-root privilege
+
+USER non-root-postgres
 
 EXPOSE 5432
 CMD ["postgres"]
