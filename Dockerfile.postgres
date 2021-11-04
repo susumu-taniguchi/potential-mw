@@ -1,6 +1,8 @@
 FROM postgres:12.6
 
-USER akuser:akuser
-RUN chmod 777 /var/lib/postgresql/data
+USER postgres:postgres
+RUN mkdir /data
+RUN chown -R postgres:postgres /data
+RUN chmod 777 /data
 EXPOSE 5432
 CMD ["postgres"]
