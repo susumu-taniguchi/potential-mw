@@ -1,4 +1,5 @@
 FROM postgres:12.6
 
+USER postgres:postgres
 EXPOSE 5432
 CMD ["postgres"]
