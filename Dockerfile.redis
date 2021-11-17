@@ -1,4 +1,5 @@
 FROM redis:6.2.4
 
+ENV TEST1=YES
 EXPOSE 6379
 CMD ["redis-server", "--appendonly", "yes"]
