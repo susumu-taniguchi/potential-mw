@@ -13,7 +13,8 @@ RUN chmod 777 /docker-entrypoint-initdb.d/postgresinit.sh
 # this 777 will be replaced by 700 at runtime (allows semi-arbitrary "--user" values)
 # RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA"
 
-USER postgres
+# USER postgres
+USER root
 
 EXPOSE 5432
 CMD ["postgres"]
