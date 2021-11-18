@@ -1,6 +1,5 @@
 FROM dpage/pgadmin4:latest
 
-RUN chown -R pgadmin:pgadmin /var/log
 RUN chown -R pgadmin:pgadmin /var/lib/pgadmin
 
 RUN chmod 777 /var/log
