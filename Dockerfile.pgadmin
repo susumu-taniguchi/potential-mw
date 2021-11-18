@@ -1,4 +1,10 @@
 FROM dpage/pgadmin4:latest
 
+RUN chown -R pgadmin:pgadmin /var/lib/pgadmin
+
+RUN chmod 777 /var/lib/pgadmin
+
 ENV PGADMIN_LISTEN_PORT=8080
+
+USER pgadmin
 EXPOSE 8080
