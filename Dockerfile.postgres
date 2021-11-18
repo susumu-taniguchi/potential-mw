@@ -16,5 +16,5 @@ RUN chmod 777 /docker-entrypoint-initdb.d/postgresinit.sh
 USER postgres
 
 EXPOSE 5432
-# CMD ["postgres"]
-CMD ["/bin/sh"]
+CMD ["postgres"]
+ENTRYPOINT sh
