@@ -1,9 +1,9 @@
 FROM dpage/pgadmin4:latest
 
-RUN chown -R pgadmin:pgadmin /var/log/pgadmin
+RUN chown -R pgadmin:pgadmin /var/log
 RUN chown -R pgadmin:pgadmin /var/lib/pgadmin
 
-RUN chmod 777 /var/log/pgadmin
+RUN chmod 777 /var/log
 RUN chmod 777 /var/lib/pgadmin
 
 ENV PGADMIN_LISTEN_PORT=8080
