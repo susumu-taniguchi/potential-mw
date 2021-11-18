@@ -14,7 +14,7 @@ ENV TEST1=YES
 # RUN mkdir -p "$PGDATA" && chown -R postgres:postgres "$PGDATA" && chmod 777 "$PGDATA"
 
 # USER postgres
-USER root
+# USER root
 
 EXPOSE 5432
 CMD ["postgres"]
