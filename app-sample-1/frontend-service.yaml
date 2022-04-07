@@ -1,0 +1,10 @@
+apiVersion: core/v1
+kind: Service
+metadata:
+  name: frontend-sample
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: frontend-sample
