@@ -6,7 +6,6 @@ metadata:
     app: frontend-sample
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: frontend-sample
@@ -27,7 +26,6 @@ spec:
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
       securityContext: {}
-      schedulerName: default-scheduler
   strategy:
     type: RollingUpdate
     rollingUpdate:
