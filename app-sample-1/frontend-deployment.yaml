@@ -17,18 +17,6 @@ spec:
       containers:
         - name: frontend-sample
           image: 'image-registry.openshift-image-registry.svc:5000/openshift/httpd:latest'
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
           imagePullPolicy: Always
           ports:
           - containerPort: 80
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-      dnsPolicy: ClusterFirst
-      securityContext: {}
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
-  progressDeadlineSeconds: 600
