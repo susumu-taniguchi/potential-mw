@@ -4,7 +4,9 @@ metadata:
   name: frontend-sample
 spec:
   ports:
-  - port: 80
+  - name: 80-tcp
+    port: 80
+    protocol: TCP
     targetPort: 80
   selector:
     app: frontend-sample
